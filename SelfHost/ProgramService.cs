@@ -1,10 +1,6 @@
 using System;
 using System.Diagnostics;
 using System.ServiceProcess;
-using log4net;
-using log4net.Appender;
-using log4net.Layout;
-using log4net.Repository.Hierarchy;
 using NServiceBus;
 using NServiceBus.Installation.Environments;
 using NServiceBus.Persistence;
