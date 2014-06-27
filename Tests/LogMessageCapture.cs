@@ -7,8 +7,9 @@ using NServiceBus.Log4Net;
 
 class LogMessageCapture
 {
-    public static List<LoggingEvent> CaptureLogMessages()
-    
+    public static List<LoggingEvent> LoggingEvents = new List<LoggingEvent>();
+
+    public static void ConfigureLogging()
     {
         var hierarchy = (Hierarchy) LogManager.GetRepository();
         hierarchy.Root.RemoveAllAppenders();
@@ -20,6 +21,5 @@ class LogMessageCapture
         };
         BasicConfigurator.Configure(target);
         Log4NetConfigurator.Configure();
-        return messages;
     }
 }

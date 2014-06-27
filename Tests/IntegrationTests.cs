@@ -8,7 +8,7 @@ public class IntegrationTests
     [Test]
     public void Ensure_log_messages_are_redirected()
     {
-        var messages = LogMessageCapture.CaptureLogMessages();
+        LogMessageCapture.ConfigureLogging();
 
         var configure = Configure.With(b => b.EndpointName("Log4netTests"));
         configure.UseSerialization<Json>();
@@ -18,7 +18,7 @@ public class IntegrationTests
         using (var bus = configure.CreateBus())
         {
             bus.Start();
-            Assert.IsNotEmpty(messages);
+            Assert.IsNotEmpty(LogMessageCapture.LoggingEvents);
         }
     }
 }
