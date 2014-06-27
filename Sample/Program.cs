@@ -11,11 +11,10 @@ class Program
         LoggingConfig.ConfigureLog4Net();
         Log4NetConfigurator.Configure();
 
-        var configure = Configure.With(builder => builder.EndpointName(() => "SelfHost"));
-        configure.DefaultBuilder();
-        configure.Serialization.Json();
+        var configure = Configure.With(configurationBuilder => configurationBuilder.EndpointName(() => "SelfHost"));
+        configure.UseSerialization<Json>();
         configure.UsePersistence<InMemory>();
-        configure.ForInstallationOn();
+        configure.EnableInstallers();
 
         using (var bus = configure.CreateBus())
         {
