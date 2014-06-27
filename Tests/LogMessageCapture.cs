@@ -14,10 +14,9 @@ class LogMessageCapture
         var hierarchy = (Hierarchy) LogManager.GetRepository();
         hierarchy.Root.RemoveAllAppenders();
 
-        var messages = new List<LoggingEvent>();
         var target = new ActionAppender
         {
-            Action = x => messages.Add(x)
+            Action = x => LoggingEvents.Add(x)
         };
         BasicConfigurator.Configure(target);
         Log4NetConfigurator.Configure();
