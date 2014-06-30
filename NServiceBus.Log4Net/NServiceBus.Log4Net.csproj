@@ -14,7 +14,7 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\NServiceBus.snk</AssemblyOriginatorKeyFile>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <NuGetPackageImportStamp>f3c86db7</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>bd91147c</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -82,7 +82,7 @@
     <Copy SourceFiles="$(OutputPath)NServiceBus.Log4Net.pdb" DestinationFolder="$(SolutionDir)NuGetBuild\Lib\NET45" />
     <Copy SourceFiles="$(OutputPath)NServiceBus.Log4Net.xml" DestinationFolder="$(SolutionDir)NuGetBuild\Lib\NET45" />
     <Copy SourceFiles="$(ProjectDir)NServiceBus.Log4Net.nuspec" DestinationFolder="$(SolutionDir)NuGetBuild" />
-    <PepitaPackage.CreatePackageTask NuGetBuildDirectory="$(SolutionDir)NuGetBuild" MetadataAssembly="$(OutputPath)\NServiceBus.Log4Net.dll" />
+    <PepitaPackage.CreatePackageTask NuGetBuildDirectory="$(SolutionDir)NuGetBuild" MetadataAssembly="$(OutputPath)\NServiceBus.Log4Net.dll" Version="$(GfvLegacySemVerPadded)"/>
     <Copy SourceFiles="$(ProjectDir)LoggerFactory.cs" DestinationFiles="$(SolutionDir)NuGetBuildCodeOnly\Content\NServiceBusLog4Net\LoggerFactory.cs.pp" />
     <Copy SourceFiles="$(ProjectDir)Logger.cs" DestinationFiles="$(SolutionDir)NuGetBuildCodeOnly\Content\NServiceBusLog4Net\Logger.cs.pp" />
     <Copy SourceFiles="$(ProjectDir)Log4NetConfigurator.cs" DestinationFiles="$(SolutionDir)NuGetBuildCodeOnly\Content\NServiceBusLog4Net\Log4NetConfigurator.cs.pp" />
@@ -91,7 +91,7 @@
     </ItemGroup>
     <FileUpdate Files="@(CsFiles)" Regex="namespace NServiceBus.Log4Net" ReplacementText="namespace $rootnamespace$.NServiceBusLog4Net" />
     <Copy SourceFiles="$(ProjectDir)NServiceBus.Log4Net-CodeOnly.nuspec" DestinationFolder="$(SolutionDir)NuGetBuildCodeOnly\" />
-    <PepitaPackage.CreatePackageTask NuGetBuildDirectory="$(SolutionDir)NuGetBuildCodeOnly" MetadataAssembly="$(OutputPath)\NServiceBus.Log4Net.dll" />
+    <PepitaPackage.CreatePackageTask NuGetBuildDirectory="$(SolutionDir)NuGetBuildCodeOnly" MetadataAssembly="$(OutputPath)\NServiceBus.Log4Net.dll" Version="$(GfvLegacySemVerPadded)"/>
   </Target>
   <Import Project="..\packages\PepitaPackage.1.20.1.0\build\PepitaPackage.targets" Condition="Exists('..\packages\PepitaPackage.1.20.1.0\build\PepitaPackage.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -99,5 +99,7 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\PepitaPackage.1.20.1.0\build\PepitaPackage.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PepitaPackage.1.20.1.0\build\PepitaPackage.targets'))" />
+    <Error Condition="!Exists('..\packages\GitVersionTask.1.1.0-beta0001\Build\GitVersionTask.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\GitVersionTask.1.1.0-beta0001\Build\GitVersionTask.targets'))" />
   </Target>
+  <Import Project="..\packages\GitVersionTask.1.1.0-beta0001\Build\GitVersionTask.targets" Condition="Exists('..\packages\GitVersionTask.1.1.0-beta0001\Build\GitVersionTask.targets')" />
 </Project>
