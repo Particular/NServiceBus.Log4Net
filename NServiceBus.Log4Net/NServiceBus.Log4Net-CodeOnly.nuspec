@@ -5,18 +5,18 @@
     <title>NServiceBus Log4Net CodeOnly</title>
     <version>$version$</version>
     <authors>NServiceBus Ltd</authors>
-    <owners>Udi Dahan, Andreas Ohlund, John Simons</owners>
+    <owners>NServiceBus Ltd</owners>
     <licenseUrl>http://particular.net/LicenseAgreement</licenseUrl>
     <projectUrl>http://particular.net/</projectUrl>
     <iconUrl>http://s3.amazonaws.com/nuget.images/NServiceBus_32.png</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <description>The Log4Net integration for the nservicebus</description>
+    <description>The Log4Net integration for nservicebus</description>
     <releaseNotes></releaseNotes>
     <copyright>Copyright 2010-2014 NServiceBus. All rights reserved</copyright>
-    <tags>nservicebus servicebus msmq cqrs publish subscribe Log4Net</tags>
+    <tags>nservicebus Log4Net</tags>
     <dependencies>
-      <dependency id="NServiceBus" />
-      <dependency id="Log4Net" />
+      <dependency id="NServiceBus" version="5.0-beta1" />
+      <dependency id="Log4Net" version="2.0" />
     </dependencies>
   </metadata>
 </package>
