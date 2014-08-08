@@ -9,12 +9,15 @@ class Program
     static void Main()
     {
         LoggingConfig.ConfigureLog4Net();
-        Log4NetConfigurator.Configure();
+        NServiceBus.Logging.LogManager.Use<Log4NetFactory>();
 
-        var configure = Configure.With(configurationBuilder => configurationBuilder.EndpointName(() => "SelfHost"));
-        configure.UseSerialization<Json>();
+        var configure = Configure.With(b =>
+        {
+            b.EndpointName("SelfHost");
+            b.UseSerialization<Json>();
+            b.EnableInstallers();
+        });
         configure.UsePersistence<InMemory>();
-        configure.EnableInstallers();
 
         using (var bus = configure.CreateBus())
         {

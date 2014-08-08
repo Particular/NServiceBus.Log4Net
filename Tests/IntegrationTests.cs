@@ -10,10 +10,13 @@ public class IntegrationTests
     {
         LogMessageCapture.ConfigureLogging();
 
-        var configure = Configure.With(b => b.EndpointName("Log4netTests"));
-        configure.UseSerialization<Json>();
+        var configure = Configure.With(b =>
+        {
+            b.EndpointName("Log4netTests");
+            b.UseSerialization<Json>();
+            b.EnableInstallers();
+        });
         configure.UsePersistence<InMemory>();
-        configure.EnableInstallers();
 
         using (var bus = configure.CreateBus())
         {

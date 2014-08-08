@@ -19,6 +19,6 @@ class LogMessageCapture
             Action = x => LoggingEvents.Add(x)
         };
         BasicConfigurator.Configure(target);
-        Log4NetConfigurator.Configure();
+        NServiceBus.Logging.LogManager.Use<Log4NetFactory>();
     }
 }

@@ -43,7 +43,7 @@
     </Reference>
     <Reference Include="NServiceBus.Core, Version=5.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\NServiceBus.5.0.0-beta0001\lib\net45\NServiceBus.Core.dll</HintPath>
+      <HintPath>..\packages\NServiceBus.5.0.0-beta0002\lib\net45\NServiceBus.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -56,7 +56,7 @@
   <ItemGroup>
     <Compile Include="Logger.cs" />
     <Compile Include="LoggerFactory.cs" />
-    <Compile Include="Log4NetConfigurator.cs" />
+    <Compile Include="Log4NetFactory.cs" />
     <Compile Include="AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -85,7 +85,7 @@
     <PepitaPackage.CreatePackageTask NuGetBuildDirectory="$(SolutionDir)NuGetBuild" MetadataAssembly="$(OutputPath)\NServiceBus.Log4Net.dll" Version="$(GfvLegacySemVerPadded)" />
     <Copy SourceFiles="$(ProjectDir)LoggerFactory.cs" DestinationFiles="$(SolutionDir)NuGetBuildCodeOnly\Content\NServiceBusLog4Net\LoggerFactory.cs.pp" />
     <Copy SourceFiles="$(ProjectDir)Logger.cs" DestinationFiles="$(SolutionDir)NuGetBuildCodeOnly\Content\NServiceBusLog4Net\Logger.cs.pp" />
-    <Copy SourceFiles="$(ProjectDir)Log4NetConfigurator.cs" DestinationFiles="$(SolutionDir)NuGetBuildCodeOnly\Content\NServiceBusLog4Net\Log4NetConfigurator.cs.pp" />
+    <Copy SourceFiles="$(ProjectDir)Log4NetFactory.cs" DestinationFiles="$(SolutionDir)NuGetBuildCodeOnly\Content\NServiceBusLog4Net\Log4NetFactory.cs.pp" />
     <ItemGroup>
       <CsFiles Include="$(SolutionDir)NuGetBuildCodeOnly\Content\NServiceBusLog4Net\*.cs.pp" />
     </ItemGroup>
