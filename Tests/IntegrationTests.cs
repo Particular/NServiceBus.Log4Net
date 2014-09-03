@@ -10,15 +10,13 @@ public class IntegrationTests
     {
         LogMessageCapture.ConfigureLogging();
 
-        var configure = Configure.With(b =>
-        {
-            b.EndpointName("Log4netTests");
-            b.UseSerialization<Json>();
-            b.EnableInstallers();
-            b.UsePersistence<InMemory>();
-        });
+        var busConfig = new BusConfiguration();
+        busConfig.EndpointName("Log4netTests");
+        busConfig.UseSerialization<JsonSerializer>();
+        busConfig.EnableInstallers();
+        busConfig.UsePersistence<InMemoryPersistence>();
 
-        using (var bus = configure.CreateBus())
+        using (var bus = Bus.Create(busConfig))
         {
             bus.Start();
             Assert.IsNotEmpty(LogMessageCapture.LoggingEvents);
