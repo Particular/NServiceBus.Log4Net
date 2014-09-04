@@ -11,7 +11,7 @@ class Program
         NServiceBus.Logging.LogManager.Use<Log4NetFactory>();
 
         var busConfig = new BusConfiguration();
-        busConfig.EndpointName("Log4netSample");
+        busConfig.EndpointName("Log4NetSample");
         busConfig.UseSerialization<JsonSerializer>();
         busConfig.EnableInstallers();
         busConfig.UsePersistence<InMemoryPersistence>();

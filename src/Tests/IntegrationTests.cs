@@ -10,7 +10,7 @@ public class IntegrationTests
         LogMessageCapture.ConfigureLogging();
 
         var busConfig = new BusConfiguration();
-        busConfig.EndpointName("Log4netTests");
+        busConfig.EndpointName("Log4NetTests");
         busConfig.UseSerialization<JsonSerializer>();
         busConfig.EnableInstallers();
         busConfig.UsePersistence<InMemoryPersistence>();
