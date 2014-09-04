@@ -1,6 +1,5 @@
 using System;
 using NServiceBus;
-using NServiceBus.Features;
 using NServiceBus.Log4Net;
 
 class Program
@@ -12,7 +11,7 @@ class Program
         NServiceBus.Logging.LogManager.Use<Log4NetFactory>();
 
         var busConfig = new BusConfiguration();
-        busConfig.EndpointName("SelfHost");
+        busConfig.EndpointName("Log4netSample");
         busConfig.UseSerialization<JsonSerializer>();
         busConfig.EnableInstallers();
         busConfig.UsePersistence<InMemoryPersistence>();

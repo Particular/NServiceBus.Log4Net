@@ -1,5 +1,4 @@
 ﻿using NServiceBus;
-using NServiceBus.Persistence;
 using NUnit.Framework;
 
 [TestFixture]
