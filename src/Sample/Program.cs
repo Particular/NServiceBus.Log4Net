@@ -1,6 +1,7 @@
 using System;
 using NServiceBus;
 using NServiceBus.Log4Net;
+using NServiceBus.Logging;
 
 class Program
 {
@@ -8,7 +9,7 @@ class Program
     static void Main()
     {
         LoggingConfig.ConfigureLog4Net();
-        NServiceBus.Logging.LogManager.Use<Log4NetFactory>();
+        LogManager.Use<Log4NetFactory>();
 
         var busConfig = new BusConfiguration();
         busConfig.EndpointName("Log4NetSample");
