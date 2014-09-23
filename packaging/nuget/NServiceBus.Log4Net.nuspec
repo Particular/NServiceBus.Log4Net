@@ -21,6 +21,5 @@
   </metadata>
   <files>
     <file src="..\..\binaries\NServiceBus.Log4Net.???" target="lib\net45" />
-    <file src="..\..\src\NServiceBus.Log4Net\**\*.cs" exclude="..\..\src\NServiceBus.Log4Net\**\TemporaryGeneratedFile_*.cs" target="src" />
   </files>
 </package>
