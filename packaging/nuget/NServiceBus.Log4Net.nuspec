@@ -20,6 +20,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\..\binaries\NServiceBus.Log4Net.???" target="lib\net45" />
+    <file src="..\..\binaries\NServiceBus.Log4Net.???" target="lib\net451" />
   </files>
 </package>
