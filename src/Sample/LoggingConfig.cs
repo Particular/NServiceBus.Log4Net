@@ -26,7 +26,7 @@ class LoggingConfig
             MaxSizeRollBackups = 10,
             LockingModel = new FileAppender.MinimalLock(),
             StaticLogFileName = false,
-            File =  @"nsb_log_",
+            File = "nsb_log_",
             Layout = layout,
             AppendToFile = true,
             Threshold = Level.Debug,

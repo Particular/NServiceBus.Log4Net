@@ -1,24 +1,29 @@
-﻿using NServiceBus;
+﻿using System.Threading.Tasks;
+using NServiceBus;
 using NUnit.Framework;
 
 [TestFixture]
 public class IntegrationTests
 {
     [Test]
-    public void Ensure_log_messages_are_redirected()
+    public async Task Ensure_log_messages_are_redirected()
     {
         LogMessageCapture.ConfigureLogging();
 
-        var busConfig = new BusConfiguration();
-        busConfig.EndpointName("Log4NetTests");
-        busConfig.UseSerialization<JsonSerializer>();
-        busConfig.EnableInstallers();
-        busConfig.UsePersistence<InMemoryPersistence>();
+        var endpointConfiguration = new EndpointConfiguration("Log4NetTests");
+        endpointConfiguration.UseSerialization<JsonSerializer>();
+        endpointConfiguration.EnableInstallers();
+        endpointConfiguration.SendFailedMessagesTo("error");
+        endpointConfiguration.UsePersistence<InMemoryPersistence>();
 
-        using (var bus = Bus.Create(busConfig))
+        var endpoint = await Endpoint.Start(endpointConfiguration);
+        try
         {
-            bus.Start();
             Assert.IsNotEmpty(LogMessageCapture.LoggingEvents);
+        }
+        finally
+        {
+            await endpoint.Stop();
         }
     }
 }
