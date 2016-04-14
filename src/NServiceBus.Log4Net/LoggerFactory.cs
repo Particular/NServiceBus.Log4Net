@@ -1,7 +1,7 @@
-﻿namespace NServiceBusLog4Net
+﻿namespace NServiceBus.Log4Net
 {
     using System;
-    using NServiceBus.Logging;
+    using Logging;
 
     class LoggerFactory : ILoggerFactory
     {
