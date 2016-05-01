@@ -1,4 +1,4 @@
-﻿namespace NServiceBus.Log4Net
+﻿namespace NServiceBus.Logging.Log4Net
 {
     using System;
     using Logging;
