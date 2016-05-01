@@ -2,7 +2,7 @@
 using log4net.Config;
 using log4net.Core;
 using log4net.Repository.Hierarchy;
-using NServiceBus.Log4Net;
+using NServiceBus;
 using log4netLogManager = log4net.LogManager;
 using NsbLogManager = NServiceBus.Logging.LogManager;
 

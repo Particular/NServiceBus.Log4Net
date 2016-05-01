@@ -7,7 +7,7 @@
     <ProjectGuid>{2B4BC1B2-DA25-46D6-B8FC-C4764D81A2D2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NServiceBus.Log4Net</RootNamespace>
+    <RootNamespace>NServiceBus.Logging.Log4Net</RootNamespace>
     <AssemblyName>NServiceBus.Log4Net</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -42,12 +42,12 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="NServiceBus.Core, Version=6.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
-      <HintPath>..\packages\NServiceBus.6.0.0-beta0001\lib\net452\NServiceBus.Core.dll</HintPath>
+      <HintPath>..\packages\NServiceBus.6.0.0-beta0002\lib\net452\NServiceBus.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -76,13 +76,13 @@
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\GitVersionTask.3.4.1\build\dotnet\GitVersionTask.targets" Condition="Exists('..\packages\GitVersionTask.3.4.1\build\dotnet\GitVersionTask.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\GitVersionTask.3.4.1\build\dotnet\GitVersionTask.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\GitVersionTask.3.4.1\build\dotnet\GitVersionTask.targets'))" />
     <Error Condition="!Exists('..\packages\NuGetPackager.0.6.0\build\NuGetPackager.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NuGetPackager.0.6.0\build\NuGetPackager.targets'))" />
+    <Error Condition="!Exists('..\packages\GitVersionTask.3.5.2\build\dotnet\GitVersionTask.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\GitVersionTask.3.5.2\build\dotnet\GitVersionTask.targets'))" />
   </Target>
   <Import Project="..\packages\NuGetPackager.0.6.0\build\NuGetPackager.targets" Condition="Exists('..\packages\NuGetPackager.0.6.0\build\NuGetPackager.targets')" />
+  <Import Project="..\packages\GitVersionTask.3.5.2\build\dotnet\GitVersionTask.targets" Condition="Exists('..\packages\GitVersionTask.3.5.2\build\dotnet\GitVersionTask.targets')" />
 </Project>
