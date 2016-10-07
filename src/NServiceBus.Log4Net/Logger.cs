@@ -1,7 +1,7 @@
-﻿namespace NServiceBusLog4Net
+﻿namespace NServiceBus.Logging.Log4Net
 {
     using System;
-    using NServiceBus.Logging;
+    using Logging;
 
     class Logger : ILog
     {
