@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.12
-MinimumVisualStudioVersion = 15.0.26430.6
+MinimumVisualStudioVersion = 15.0.26430.12
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample", "Sample\Sample.csproj", "{A2B73F45-B06F-4D97-A6D3-F02669FE8F1B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NServiceBus.Log4Net", "NServiceBus.Log4Net\NServiceBus.Log4Net.csproj", "{2B4BC1B2-DA25-46D6-B8FC-C4764D81A2D2}"
