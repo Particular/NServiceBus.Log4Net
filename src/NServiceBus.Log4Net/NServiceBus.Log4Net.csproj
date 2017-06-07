@@ -16,8 +16,8 @@
   <ItemGroup>
     <PackageReference Include="log4net" Version="2.0.0" />
     <PackageReference Include="NServiceBus" Version="6.3.3" />
-    <PackageReference Include="GitVersionTask" Version="4.0.0-beta0012" PrivateAssets="All" />
-    <PackageReference Include="NuGetPackager" Version="0.6.3" PrivateAssets="All" />
+    <PackageReference Include="GitVersionTask" Version="4.0.0-beta0012" />
+    <PackageReference Include="NuGetPackager" Version="0.6.3" />
     <None Include="..\..\packaging\nuget\NServiceBus.Log4Net.nuspec">
       <Link>NServiceBus.Log4Net.nuspec</Link>
     </None>
