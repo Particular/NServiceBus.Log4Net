@@ -2,10 +2,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net452</TargetFramework>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <DebugType>full</DebugType>
     <DebugSymbols>True</DebugSymbols>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Optimize>False</Optimize>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="NServiceBus.Log4Net.approved.cs" />
