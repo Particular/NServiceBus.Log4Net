@@ -3,16 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 15.0.26430.12
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample", "Sample\Sample.csproj", "{A2B73F45-B06F-4D97-A6D3-F02669FE8F1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample", "Sample\Sample.csproj", "{A2B73F45-B06F-4D97-A6D3-F02669FE8F1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NServiceBus.Log4Net", "NServiceBus.Log4Net\NServiceBus.Log4Net.csproj", "{2B4BC1B2-DA25-46D6-B8FC-C4764D81A2D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NServiceBus.Log4Net", "NServiceBus.Log4Net\NServiceBus.Log4Net.csproj", "{2B4BC1B2-DA25-46D6-B8FC-C4764D81A2D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NServiceBus.Log4Net.Tests", "NServiceBus.Log4Net.Tests\NServiceBus.Log4Net.Tests.csproj", "{BAFAAE1F-9519-411F-AAEC-836A1D857A9F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B8E88F30-2944-445F-862F-B959BFD6DE4B}"
-	ProjectSection(SolutionItems) = preProject
-		..\GitVersion.yml = ..\GitVersion.yml
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NServiceBus.Log4Net.Tests", "NServiceBus.Log4Net.Tests\NServiceBus.Log4Net.Tests.csproj", "{BAFAAE1F-9519-411F-AAEC-836A1D857A9F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
