@@ -11,9 +11,9 @@ public class IntegrationTests
         LogMessageCapture.ConfigureLogging();
 
         var endpointConfiguration = new EndpointConfiguration("Log4NetTests");
-        endpointConfiguration.UseSerialization<JsonSerializer>();
         endpointConfiguration.EnableInstallers();
         endpointConfiguration.SendFailedMessagesTo("error");
+        endpointConfiguration.UseTransport<LearningTransport>();
         endpointConfiguration.UsePersistence<InMemoryPersistence>();
 
         var endpoint = await Endpoint.Start(endpointConfiguration);
