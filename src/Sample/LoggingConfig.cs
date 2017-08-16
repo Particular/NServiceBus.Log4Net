@@ -1,4 +1,7 @@
-﻿using log4net.Appender;
+﻿using System;
+using System.Reflection;
+using log4net;
+using log4net.Appender;
 using log4net.Config;
 using log4net.Core;
 using log4net.Layout;
@@ -12,7 +15,7 @@ class LoggingConfig
             ConversionPattern = "%d [%t] %-5p %c [%x] - %m%n"
         };
         layout.ActivateOptions();
-        var consoleAppender = new ColoredConsoleAppender
+        var consoleAppender = new ConsoleAppender
         {
             Threshold = Level.Debug,
             Layout = layout
@@ -33,6 +36,16 @@ class LoggingConfig
         };
         appender.ActivateOptions();
 
-        BasicConfigurator.Configure(appender, consoleAppender);
+        var repository = LogManager.GetRepository(Assembly.GetCallingAssembly());
+        BasicConfigurator.Configure(repository, appender, consoleAppender);
+    }
+}
+
+
+public class ConsoleAppender : AppenderSkeleton
+{
+    protected override void Append(LoggingEvent loggingEvent)
+    {
+        Console.Write(RenderLoggingEvent(loggingEvent));
     }
 }

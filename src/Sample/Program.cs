@@ -17,15 +17,17 @@ class Program
         LogManager.Use<Log4NetFactory>();
 
         var endpointConfiguration = new EndpointConfiguration("Log4NetSample");
-        endpointConfiguration.UseSerialization<JsonSerializer>();
         endpointConfiguration.EnableInstallers();
         endpointConfiguration.SendFailedMessagesTo("error");
+        endpointConfiguration.UseTransport<LearningTransport>();
         endpointConfiguration.UsePersistence<InMemoryPersistence>();
 
-        var endpoint = await Endpoint.Start(endpointConfiguration);
+        var endpoint = await Endpoint.Start(endpointConfiguration)
+            .ConfigureAwait(false);
         try
         {
-            await endpoint.SendLocal(new MyMessage());
+            await endpoint.SendLocal(new MyMessage())
+                .ConfigureAwait(false);
             Console.WriteLine("Press any key to exit");
             Console.ReadKey();
         }
