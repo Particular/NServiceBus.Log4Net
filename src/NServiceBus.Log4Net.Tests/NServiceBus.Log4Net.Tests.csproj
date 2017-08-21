@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net46</TargetFramework>
+    <TargetFrameworks>net452;netcoreapp2.0</TargetFrameworks>
     <DebugType>full</DebugType>
     <DebugSymbols>True</DebugSymbols>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
@@ -10,12 +10,24 @@
   <ItemGroup>
     <Compile Remove="NServiceBus.Log4Net.approved.cs" />
     <Compile Remove="NServiceBus.Log4Net.received.cs" />
-    <PackageReference Include="ApprovalTests" Version="3.*" />
-    <PackageReference Include="ApprovalUtilities" Version="3.*" />
+    <PackageReference Include="log4net" Version="2.*" />
+    <PackageReference Include="NServiceBus" Version="7.0.0-*" />
     <PackageReference Include="Mono.Cecil" Version="0.10.0-*" />
     <PackageReference Include="NUnit" Version="3.*" />
+    <ProjectReference Include="..\NServiceBus.Log4Net\NServiceBus.Log4Net.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
+    <Compile Remove="APIApprovals.cs" />
+    <Compile Remove="ApprovalTestConfig.cs" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.*" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.*" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net452'">
+    <PackageReference Include="ApprovalTests" Version="3.*" />
+    <PackageReference Include="ApprovalUtilities" Version="3.*" />
     <PackageReference Include="ApiApprover" Version="6.1.0-*" />
     <PackageReference Include="PublicApiGenerator" Version="6.1.0-*" />
-    <ProjectReference Include="..\NServiceBus.Log4Net\NServiceBus.Log4Net.csproj" />
   </ItemGroup>
 </Project>
