@@ -1,5 +1,4 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 using log4net;
 using log4net.Appender;
 using log4net.Config;
@@ -38,14 +37,5 @@ class LoggingConfig
 
         var repository = LogManager.GetRepository(Assembly.GetCallingAssembly());
         BasicConfigurator.Configure(repository, appender, consoleAppender);
-    }
-}
-
-
-public class ConsoleAppender : AppenderSkeleton
-{
-    protected override void Append(LoggingEvent loggingEvent)
-    {
-        Console.Write(RenderLoggingEvent(loggingEvent));
     }
 }
