@@ -19,8 +19,10 @@
   <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
     <Compile Remove="APIApprovals.cs" />
     <Compile Remove="ApprovalTestConfig.cs" />
+    <!-- until https://github.com/nunit/nunit3-vs-adapter/issues/371 is fixed
     <PackageReference Include="NUnit3TestAdapter" Version="3.8.0-alpha1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.*" />
+    -->
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net452'">
