@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net452;netcoreapp2.0</TargetFrameworks>
+    <TargetFrameworks>net452</TargetFrameworks>
     <DebugType>full</DebugType>
     <DebugSymbols>True</DebugSymbols>
     <Optimize>False</Optimize>
@@ -14,15 +14,13 @@
     <PackageReference Include="Mono.Cecil" Version="0.10.0-*" />
     <PackageReference Include="NUnit" Version="3.*" />
     <ProjectReference Include="..\NServiceBus.Log4Net\NServiceBus.Log4Net.csproj" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.8.0-alpha1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.*" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
     <Compile Remove="APIApprovals.cs" />
     <Compile Remove="ApprovalTestConfig.cs" />
-    <!-- until https://github.com/nunit/nunit3-vs-adapter/issues/371 is fixed
-    <PackageReference Include="NUnit3TestAdapter" Version="3.8.0-alpha1" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.*" />
-    -->
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net452'">
