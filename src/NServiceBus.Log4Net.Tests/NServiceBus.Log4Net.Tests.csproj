@@ -12,7 +12,7 @@
     <PackageReference Include="log4net" Version="2.*" />
     <PackageReference Include="NServiceBus" Version="7.0.0-*" />
     <PackageReference Include="Mono.Cecil" Version="0.10.0-*" />
-    <PackageReference Include="NUnit" Version="3.7.*" />
+    <PackageReference Include="NUnit" Version="3.*" />
     <ProjectReference Include="..\NServiceBus.Log4Net\NServiceBus.Log4Net.csproj" />
   </ItemGroup>
 
