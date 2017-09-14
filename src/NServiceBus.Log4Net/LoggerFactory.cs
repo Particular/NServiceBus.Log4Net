@@ -6,7 +6,6 @@
 
     class LoggerFactory : ILoggerFactory
     {
-
         public ILog GetLogger(Type type)
         {
             var logger = log4net.LogManager.GetLogger(type);

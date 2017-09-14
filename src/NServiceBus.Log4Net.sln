@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample", "Sample\Sample.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NServiceBus.Log4Net", "NServiceBus.Log4Net\NServiceBus.Log4Net.csproj", "{2B4BC1B2-DA25-46D6-B8FC-C4764D81A2D2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NServiceBus.Log4Net.Tests", "NServiceBus.Log4Net.Tests\NServiceBus.Log4Net.Tests.csproj", "{BAFAAE1F-9519-411F-AAEC-836A1D857A9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{BAFAAE1F-9519-411F-AAEC-836A1D857A9F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
