@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Reflection;
 using log4net.Config;
 using log4net.Core;
 using log4net.Repository.Hierarchy;
@@ -12,14 +13,15 @@ class LogMessageCapture
 
     public static void ConfigureLogging()
     {
-        var hierarchy = (Hierarchy)log4netLogManager.GetRepository();
+        var repository = log4netLogManager.GetRepository(Assembly.GetCallingAssembly());
+        var hierarchy = (Hierarchy)repository;
         hierarchy.Root.RemoveAllAppenders();
 
         var target = new ActionAppender
         {
             Action = x => LoggingEvents.Add(x)
         };
-        BasicConfigurator.Configure(target);
+        BasicConfigurator.Configure(repository, target);
         NsbLogManager.Use<Log4NetFactory>();
     }
 }

@@ -5,34 +5,22 @@ using NServiceBus.Logging;
 
 class Program
 {
-
-    static void Main()
-    {
-        AsyncMain().GetAwaiter().GetResult();
-    }
-
-    static async Task AsyncMain()
+    static async Task Main()
     {
         LoggingConfig.ConfigureLog4Net();
         LogManager.Use<Log4NetFactory>();
 
-        var endpointConfiguration = new EndpointConfiguration("Log4NetSample");
-        endpointConfiguration.UseSerialization<JsonSerializer>();
-        endpointConfiguration.EnableInstallers();
-        endpointConfiguration.SendFailedMessagesTo("error");
-        endpointConfiguration.UsePersistence<InMemoryPersistence>();
+        var configuration = new EndpointConfiguration("Log4NetSample");
+        configuration.EnableInstallers();
+        configuration.UseTransport<LearningTransport>();
 
-        var endpoint = await Endpoint.Start(endpointConfiguration);
-        try
-        {
-            await endpoint.SendLocal(new MyMessage());
-            Console.WriteLine("Press any key to exit");
-            Console.ReadKey();
-        }
-        finally
-        {
-            await endpoint.Stop();
-        }
+        var endpoint = await Endpoint.Start(configuration)
+            .ConfigureAwait(false);
+        await endpoint.SendLocal(new MyMessage())
+            .ConfigureAwait(false);
+        Console.WriteLine("Press any key to exit");
+        Console.ReadKey();
+        await endpoint.Stop()
+            .ConfigureAwait(false);
     }
-
 }
