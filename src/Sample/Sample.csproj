@@ -10,4 +10,8 @@
     <ProjectReference Include="..\NServiceBus.Log4Net\NServiceBus.Log4Net.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="NServiceBus" Version="7.1.0" />
+  </ItemGroup>
+
 </Project>
