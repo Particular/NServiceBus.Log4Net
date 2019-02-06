@@ -1,0 +1,8 @@
+namespace NServiceBus
+{
+    public class Log4NetFactory : NServiceBus.Logging.LoggingFactoryDefinition
+    {
+        public Log4NetFactory() { }
+        protected override NServiceBus.Logging.ILoggerFactory GetLoggingFactory() { }
+    }
+}
