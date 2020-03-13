@@ -22,6 +22,8 @@ class LogMessageCapture
             Action = x => LoggingEvents.Add(x)
         };
         BasicConfigurator.Configure(repository, target);
+#pragma warning disable 0618
         NsbLogManager.Use<Log4NetFactory>();
+#pragma warning restore 0618
     }
 }
