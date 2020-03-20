@@ -1,5 +1,6 @@
 namespace NServiceBus
 {
+    [System.ObsoleteAttribute(@"NServiceBus is now providing support for logging libraries through the Microsoft.Extensions.Logging abstraction. Remove the NServiceBus.Log4Net package. Install the NServiceBus.Extensions.Logging and Microsoft.Extensions.Logging.Log4Net.AspNetCore packages instead. Will be treated as an error from version 4.0.0. Will be removed in version 5.0.0.", false)]
     public class Log4NetFactory : NServiceBus.Logging.LoggingFactoryDefinition
     {
         public Log4NetFactory() { }

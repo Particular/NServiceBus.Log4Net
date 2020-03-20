@@ -8,7 +8,9 @@ class Program
     static async Task Main()
     {
         LoggingConfig.ConfigureLog4Net();
+#pragma warning disable 0618
         LogManager.Use<Log4NetFactory>();
+#pragma warning restore 0618
 
         var configuration = new EndpointConfiguration("Log4NetSample");
         configuration.EnableInstallers();
