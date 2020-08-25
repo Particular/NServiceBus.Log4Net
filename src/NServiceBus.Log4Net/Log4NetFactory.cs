@@ -1,7 +1,7 @@
 ﻿namespace NServiceBus
 {
+    using System;
     using Logging;
-    using Logging.Log4Net;
 
     /// <summary>
     /// Configure NServiceBus logging messages to use Log4Net. Use by calling <see cref="LogManager.Use{T}"/> the T is <see cref="Log4NetFactory"/>.
@@ -18,7 +18,7 @@
         /// </summary>
         protected override ILoggerFactory GetLoggingFactory()
         {
-            return new LoggerFactory();
+            throw new NotImplementedException("NServiceBus is now providing support for logging libraries through the Microsoft.Extensions.Logging abstraction. Remove the NServiceBus.Log4Net package. Install the NServiceBus.Extensions.Logging and Microsoft.Extensions.Logging.Log4Net.AspNetCore packages instead.");
         }
 
     }
