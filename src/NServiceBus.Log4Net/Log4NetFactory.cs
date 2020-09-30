@@ -10,7 +10,7 @@
         Message = "NServiceBus is now providing support for logging libraries through the Microsoft.Extensions.Logging abstraction. Remove the NServiceBus.Log4Net package. Install the NServiceBus.Extensions.Logging and Microsoft.Extensions.Logging.Log4Net.AspNetCore packages instead.",
         RemoveInVersion = "5.0.0",
         TreatAsErrorFromVersion = "4.0.0")]
-    public class Log4NetFactory: LoggingFactoryDefinition
+    public class Log4NetFactory : LoggingFactoryDefinition
     {
 
         /// <summary>
