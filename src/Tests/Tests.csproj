@@ -10,7 +10,8 @@
 
   <ItemGroup>
     <PackageReference Include="GitHubActionsTestLogger" Version="2.0.1" />
-    <PackageReference Include="log4net" Version="2.*" />
+    <!-- DO NOT REMOVE Log4Net, it is added so that dependabot knows about version changes-->
+    <PackageReference Include="Log4Net" Version="2.0.15" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
     <PackageReference Include="NServiceBus" Version="8.0.0-beta.5" />
     <PackageReference Include="NUnit" Version="3.13.3" />
